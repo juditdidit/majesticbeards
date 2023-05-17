@@ -1,0 +1,25 @@
+.kofi-btn {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: @body-bg;
+    color: @body-color;
+    border-radius: 50px;
+    border: none;
+    padding: 4px 16px;
+
+    .kofi-img {
+        height: 15px;
+        width: 22px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-bottom: 3px;
+        content: url(https://storage.ko-fi.com/cdn/cup-border.png);
+    }
+
+    &:hover {
+        .kofi-img {
+            animation: wiggle 3s infinite;
+        }
+    }
+}

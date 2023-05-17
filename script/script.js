@@ -24,9 +24,9 @@ function start() {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-    // Display current year
-    document.getElementById('year').innerHTML = new Date().getFullYear();
-
-    // Populate adjective
+    // Populate adjective in answer
     document.getElementById('adj').innerHTML = grabAdj();
+
+    // Display current year for copyright info
+    document.getElementById('year').innerHTML = new Date().getFullYear();
 });
