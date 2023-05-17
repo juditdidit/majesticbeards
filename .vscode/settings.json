@@ -1,0 +1,8 @@
+{
+    "less.compile": {
+        "compress": true,
+        "relativeUrls": true,
+        "main": "${workspaceRoot}/css/styles.less",
+        "autoprefixer": "> 5%, last 2 Chrome versions, not ie 6-9"
+    }
+}
