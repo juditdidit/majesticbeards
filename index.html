@@ -36,33 +36,55 @@
     </section>
     <section id="start" class="start">
         <div class="container">
-            <div class="question-block in" data-question-id="1">
+            <div class="question-block" data-question-id="1">
                 <p class="question">How <i>majestic</i> is your beard?</p>
                 <p class="description">
                     Answer the following personalized questions to help determine the future of your beard.
                 </p>
+                <div class="options">
+                    <button type="button" onClick="nextQuestion(this)">I'm ready</button>
+                </div>
             </div>
-            <div class="question-block in" data-question-id="2">
+            <div class="question-block" data-question-id="2">
                 <p class="question">Have you ever been mistaken for a viking?</p>
-                <!-- <div class="options">
-                    <button type="button" class="selected">yes</button>
-                    <button type="button">no</button>
-                </div> -->
+                <div class="options">
+                    <button type="button" onClick="nextQuestion(this)">Yes, constantly</button>
+                    <button type="button" onClick="nextQuestion(this)">No, never in my life</button>
+                </div>
             </div>
-            <div class="question-block in" data-question-id="3">
+            <div class="question-block" data-question-id="3">
                 <p class="question">Do you chop wood in the forest in your flannel shirt?</p>
+                <div class="options">
+                    <button type="button" onClick="nextQuestion(this)">Yes, is there any other way?</button>
+                    <button type="button" onClick="nextQuestion(this)">No, can't say that I do</button>
+                </div>
             </div>
-            <div class="question-block in" data-question-id="4">
+            <div class="question-block" data-question-id="4">
                 <p class="question">Have you ever hand-wrestled a bear and won?</p>
+                <div class="options">
+                    <button type="button" onClick="nextQuestion(this)">Yes, clearly I'm still here</button>
+                    <button type="button" onClick="nextQuestion(this)">No, that sounds terrifying</button>
+                </div>
             </div>
-            <div class="question-block in" data-question-id="5">
+            <div class="question-block" data-question-id="5">
                 <p class="question">Does your beard boost your confidence?</p>
+                <div class="options">
+                    <button type="button" onClick="nextQuestion(this)">Yes, extremely</button>
+                    <button type="button" onClick="nextQuestion(this)">No, not really</button>
+                </div>
             </div>
-            <div class="question-block in" data-question-id="6">
-                <p class="question">Have you ever built a log cabin with your bare hands?</p>
+            <div class="question-block" data-question-id="6">
+                <p class="question">Have you ever built a log cabin with your two bare hands?</p>
+                <div class="options">
+                    <button type="button" onClick="getAnswer(this)">Yes, of course I have</button>
+                    <button type="button" onClick="getAnswer(this)">No, that's too much work</button>
+                </div>
             </div>
-            <div class="answer">
-                <p>You should not shave your<br><i id="adjective"></i> beard!</p>
+            <div class="answer-block">
+                <div class="answer">
+                    <p>You should not shave your<br><i id="adjective"></i> beard!</p>
+                </div>
+                <div class="description fin">• Fin •</div>
             </div>
         </div>
     </section>

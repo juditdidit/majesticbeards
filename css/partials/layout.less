@@ -55,68 +55,99 @@ body {
 }
 
 .start {
-    padding: 60px 0;
     min-height: 100vh;
 
-    .question-block {
-        position: relative;
-        padding-bottom: 40px;
+    .container {
+        padding-bottom: 180px;
+    }
+
+    .question-block,
+    .answer-block {
+        display: none;
         opacity: 0;
-        transition: opacity 1s;
-        transition-delay: 0.5s;
+        padding-top: 120px;
 
         &.in {
-            opacity: 1;
+            display: block;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
         }
+    }
+
+    // Force first question to be display block but hidden
+    .question-block[data-question-id="1"] {
+        display: block;
+    }
+
+    .question-block,
+    .answer {
+        position: relative;
+        padding-bottom: 60px;
 
         &:after {
+            @divider-size: 60px;
+
             content: '';
-            width: 60px;
-            border-top: 2px solid @divider;
             position: absolute;
             bottom: 0;
-            margin-left: -30px;
-        }
-
-        .question {
-            font-size: 2rem;
-            line-height: 2.25rem;
-        }
-
-        .description,
-        .options {
-            font-size: initial;
-            color: @body-color-alt;
-            width: 80%;
-            margin: 30px auto 0;
-        }
-
-        .options {
-            display: flex;
-            justify-content: center;
-
-            button {
-                border: none;
-                background-color: transparent;
-                padding: 0;
-                margin: 0;
-                display: block;
-                font-size: inherit;
-                color: inherit;
-                position: relative;
-            }
-
-            button + button {
-                margin-left: 40px;
-            }
+            width: @divider-size;
+            border-top: 2px solid @divider;
+            margin-left: -(@divider-size / 2);
         }
     }
 
-    .question-block + .question-block {
-        margin-top: 100px;
-    }
-
+    .question,
     .answer {
-        display: none;
+        font-size: 2rem;
+        line-height: 2.6rem;
+    }
+
+    .description,
+    .options {
+        font-size: initial;
+        color: @body-color-alt;
+        padding-top: 40px;
+        margin: 0 auto;
+    }
+
+    .description {
+        width: 80%;
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+
+        button {
+            display: block;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            font-size: inherit;
+            color: inherit;
+
+            &.selected {
+                text-decoration: underline;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:disabled {
+                color: @divider;
+            }
+        }
+
+        button + button {
+            margin-left: 40px;
+        }
+    }
+
+    .fin {
+        color: @primary;
+        text-transform: uppercase;
     }
 }
