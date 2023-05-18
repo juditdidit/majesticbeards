@@ -5,27 +5,47 @@ const adjList = [
     'resplendent', 'stately', 'gorgeous'
 ];
 
+let questionCounter = 1; // TODO - make this work
+
 /**
  * Generate a random number between 0 and less than total array length.
  * Return the adjective with the matching index.
  */
-function grabAdj() {
+function getAdjective() {
     let pick = Math.floor(Math.random() * adjList.length);
     let adjective = adjList[pick];
     return adjective;
 }
 
 /**
- * Start the question process by scrolling down to the section
+ * Scroll down to the question section
  */
-function start() {
+function scrollToStart() {
     const start = document.getElementById('start');
     start.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('[data-id="1"]').classList.add('scrolled');
 }
 
-document.addEventListener("DOMContentLoaded", function(event) { 
+/**
+ * Trigger text fade-in once scrolled into viewport
+ */
+function fadeInQuestion(questionId) {
+    let question = document.querySelector(`[data-id="${questionId}"]`);
+    let observer = new IntersectionObserver(function(entries) {
+        if(entries[0].isIntersecting === true) {
+            question.classList.add('in');
+        };
+    }, { threshold: [1] });
+    observer.observe(question);
+}
+
+// Make sure the document is ready
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Start off question #1
+    fadeInQuestion(1);
+
     // Populate adjective in answer
-    document.getElementById('adj').innerHTML = grabAdj();
+    document.getElementById('adjective').innerHTML = getAdjective();
 
     // Display current year for copyright info
     document.getElementById('year').innerHTML = new Date().getFullYear();

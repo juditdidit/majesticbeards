@@ -25,7 +25,7 @@
             >
         </h1>
         <div class="scroll">
-            <button type="button" onClick="start()">
+            <button type="button" onClick="scrollToStart()">
                 <img
                     srcset="img/arrow-light@2x.png 2x"
                     src="img/arrow-light.png"
@@ -36,14 +36,21 @@
     </section>
     <section id="start" class="start">
         <div class="container">
-            <div class="question">
-                <p>How <i>majestic</i> is your beard?</p>
+            <div class="question-block" data-id="1">
+                <p class="question">How <i>majestic</i> is your beard?</p>
                 <p class="description">
                     Answer the following personalized questions to help determine the future of your beard.
                 </p>
             </div>
+            <div class="question-block" data-id="2">
+                <p class="question">Have you ever been mistaken for a viking?</p>
+                <div class="options">
+                    <button type="button">yes</button>
+                    <button type="button">no</button>
+                </div>
+            </div>
             <div class="answer">
-                <p>You must not shave your<br><i id="adj"></i> beard!</p>
+                <p>You must not shave your<br><i id="adjective"></i> beard!</p>
             </div>
         </div>
     </section>
