@@ -63,8 +63,8 @@ function nextQuestion(clicked) {
     const currentQuestion = clicked.closest('.question-block');
     const nextQuestionId = parseInt(currentQuestion.getAttribute('data-question-id')) + 1;
     const nextQuestion = document.querySelector(`[data-question-id="${nextQuestionId}"]`);
-    fadeIn(nextQuestion);
     updateContentHeight(currentQuestion);
+    fadeIn(nextQuestion);
 }
 
 /**
@@ -75,8 +75,8 @@ function getAnswer(clicked) {
     disableOptions(clicked);
     const currentQuestion = clicked.closest('.question-block');
     const answer = document.querySelector('.answer-block');
-    fadeIn(answer);
     updateContentHeight(currentQuestion);
+    fadeIn(answer);
 }
 
 /**
