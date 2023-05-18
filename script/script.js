@@ -23,26 +23,30 @@ function getAdjective() {
 function scrollToStart() {
     const start = document.getElementById('start');
     start.scrollIntoView({ behavior: 'smooth' });
-    document.querySelector('[data-id="1"]').classList.add('scrolled');
 }
 
 /**
- * Trigger text fade-in once scrolled into viewport
+ * Trigger question fade-in once scrolled into viewport
  */
 function fadeInQuestion(questionId) {
-    let question = document.querySelector(`[data-id="${questionId}"]`);
+    let question = document.querySelector(`[data-question-id="${questionId}"]`);
     let observer = new IntersectionObserver(function(entries) {
         if(entries[0].isIntersecting === true) {
             question.classList.add('in');
         };
     }, { threshold: [1] });
     observer.observe(question);
+    questionCounter = questionId + 1;
 }
 
 // Make sure the document is ready
 document.addEventListener("DOMContentLoaded", function(event) {
-    // Start off question #1
-    fadeInQuestion(1);
+    // Fade in question #1
+    // fadeInQuestion(1);
+    // Fake in question #2 with a slight delay
+    // setTimeout(() => {
+    //     fadeInQuestion(2);
+    // }, 2000);
 
     // Populate adjective in answer
     document.getElementById('adjective').innerHTML = getAdjective();
