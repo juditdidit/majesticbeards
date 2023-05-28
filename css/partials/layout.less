@@ -20,7 +20,7 @@ body {
         text-align: center;
 
         @media (orientation: portrait) {
-            padding-bottom: 180px;
+            padding-bottom: @section-bottom;
         }
 
         img {
@@ -36,16 +36,14 @@ body {
             bottom: 120px;
         }
 
-        @button: 70px;
-
         button {
             border: none;
             padding: 0;
             margin: 0;
             background-color: transparent;
-            width: @button;
-            height: @button;
-            border-radius: (@button / 2);
+            width: @scroll-size;
+            height: @scroll-size;
+            border-radius: (@scroll-size / 2);
 
             img {
                 width: 50px;
@@ -68,14 +66,14 @@ body {
 }
 
 .start {
-    padding: 0 0 180px;
+    padding: 0 0 @section-bottom;
     min-height: 100vh;
 
     .question-block,
     .answer-block {
         display: none;
         opacity: 0;
-        padding-top: 120px;
+        padding-top: @section-top;
 
         &.in {
             display: block;
@@ -93,7 +91,7 @@ body {
     .question-block,
     .answer {
         position: relative;
-        padding-bottom: 60px;
+        padding-bottom: (@section-top / 2);
 
         &:after {
             @divider-size: 60px;
