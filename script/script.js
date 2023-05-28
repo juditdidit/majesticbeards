@@ -61,8 +61,6 @@ function randomizeQuestions() {
         .map(question => ({ question, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
         .map(({ question }) => question);
-
-    console.log(questionList);
 }
 
 /**
@@ -104,9 +102,6 @@ function next(clicked) {
     disableOptions(clicked);
     const currentQuestion = clicked.closest('.question-block');
     const nextQuestionId = parseInt(currentQuestion.getAttribute('data-question-id')) + 1;
-
-    console.log(questionList.length);
-    console.log(nextQuestionId -2);
 
     // Note: our question list index and question IDs don't match up, hence the '-2'
     if (questionList.length > nextQuestionId -2) {
